@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" />
+      <p></p>
+
+      <script>
+         const input = document.querySelector('input')
+         const p = document.querySelector('p')
+
+         // 이메일인지 아닌지 판단을 하는 함수
+         const isEmail = (value) => {
+            // @를 갖고 있고 @ 뒤에 점이 있으면 이메일 형식
+            // ex) t@naver.com -> 앞에 아이디가 있어야 하기 때문에 인덱스번호 최소 1부터 시작
+            // value.split('@') 실행시 => ['t','naver.com']
+            return value.indexOf('@') >= 1 && value.split('@')[1].indexOf('.') >= 1
+            // @를 포함하면서(&&) @를 기준으로 나눈 배열의 1번째 인덱스에서 .을 포함하고 있는 것
+         }
+
+         input.addEventListener('keyup', (event) => {
+            const value = event.target.value
+
+            // 입력한 이메일을 isEmail 함수에 전달
+            if (isEmail(value)) {
+               p.style.color = 'green'
+               p.textContent = `이메일 형식입니다: ${value}`
+            } else {
+               p.style.color = 'red'
+               p.textContent = `이메일 형식이 아닙니다: ${value}`
+            }
+         })
+      </script>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // car 객체
+         // this.color는 Car 객체의 속성, color는 매개변수의 color
+         function Car(color, seater) {
+            // function명은 항상 대문자
+            this.color = color
+            this.seater = seater
+         }
+
+         Car.prototype.run = function (status) {
+            if (status) {
+               return '자동차가 달립니다.'
+            }
+         }
+
+         Car.prototype.stop = function (status) {
+            if (status) {
+               return '자동차가 멈춥니다.'
+            }
+         }
+
+         const myCar1 = new Car('블랙', 4)
+
+         console.log(myCar1.color)
+         console.log(myCar1.seater)
+         console.log(myCar1.run(true))
+         console.log(myCar1.stop(true))
+      </script>
+   </body>
+</html>

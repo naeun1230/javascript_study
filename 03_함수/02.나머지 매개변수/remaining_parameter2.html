@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 나머지 매개변수로 값을 받아서 최솟값을 구하는 함수
+         function min(...array) {
+            let output = array[0] //52
+            for (const item of array) {
+               if (output > item) {
+                  output = item
+               }
+            }
+
+            return output
+         }
+
+         console.log(`최솟값: ${min(52, 273, 32, 103, 275, 24, 57)}`)
+      </script>
+   </body>
+</html>

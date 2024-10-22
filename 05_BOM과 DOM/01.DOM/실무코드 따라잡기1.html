@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         * {
+            box-sizing: border-box;
+         }
+
+         body {
+            background-color: #eee;
+            font-size: 16px;
+         }
+
+         .wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 1rem; /* 16px */
+         }
+
+         .card {
+            background-color: #fff;
+            box-shadow: 0px 1px 5px #222;
+            border-radius: 8px;
+            overflow: hidden;
+         }
+
+         .card > header {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            background-color: #f4f4f4;
+         }
+
+         .card > p {
+            padding: 0 1rem;
+         }
+
+         .card img {
+            width: 200px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrapper" id="drama-card"></div>
+
+      <script>
+         const data = {
+            result: [
+               {
+                  title: '이태원 클라쓰',
+                  year: 2020,
+                  genre: ['드라마', '로맨스'],
+                  episodes: 16,
+                  cast: ['박서준', '김다미'],
+                  synopsis: '편견과 불공정에 맞서 싸우는 청년의 성공 스토리.',
+                  img: 'images/01.jpg',
+               },
+               {
+                  title: '사랑의 불시착',
+                  year: 2019,
+                  genre: ['로맨스', '코미디'],
+                  episodes: 16,
+                  cast: ['현빈', '손예진'],
+                  synopsis: '북한으로 불시착한 재벌 상속녀와 북한 장교의 사랑 이야기.',
+                  img: 'images/02.jpg',
+               },
+               {
+                  title: '호텔 델루나',
+                  year: 2019,
+                  genre: ['판타지', '로맨스'],
+                  episodes: 16,
+                  cast: ['아이유', '여진구'],
+                  synopsis: '죽은 영혼들이 묵는 호텔에서 벌어지는 미스터리한 이야기.',
+                  img: 'images/03.jpg',
+               },
+               {
+                  title: '미스터 션샤인',
+                  year: 2018,
+                  genre: ['역사', '멜로'],
+                  episodes: 24,
+                  cast: ['이병헌', '김태리'],
+                  synopsis: '구한말 조선과 미국에서 살아가는 사람들의 사랑과 충돌을 그린 작품.',
+                  img: 'images/04.jpg',
+               },
+               {
+                  title: '빈센조',
+                  year: 2021,
+                  genre: ['액션', '코미디'],
+                  episodes: 20,
+                  cast: ['송중기', '전여빈'],
+                  synopsis: '이탈리아 마피아 변호사 빈센조가 한국으로 돌아와 정의를 실현하는 이야기.',
+                  img: 'images/05.jpg',
+               },
+               {
+                  title: '슬기로운 의사생활',
+                  year: 2020,
+                  genre: ['드라마', '의학'],
+                  episodes: 12,
+                  cast: ['조정석', '유연석'],
+                  synopsis: '의사로서의 일상과 우정, 사랑을 그린 이야기.',
+                  img: 'images/06.jpg',
+               },
+               {
+                  title: '더 킹: 영원의 군주',
+                  year: 2020,
+                  genre: ['판타지', '로맨스'],
+                  episodes: 16,
+                  cast: ['이민호', '김고은'],
+                  synopsis: '평행 세계를 넘나드는 두 나라의 황제와 형사의 이야기를 담은 판타지 로맨스.',
+                  img: 'images/07.jpg',
+               },
+               {
+                  title: '태양의 후예',
+                  year: 2016,
+                  genre: ['로맨스', '액션'],
+                  episodes: 16,
+                  cast: ['송중기', '송혜교'],
+                  synopsis: '군인과 의사 간의 로맨스와 전쟁의 위험 속에서 피어나는 사랑을 그린 이야기.',
+                  img: 'images/08.jpg',
+               },
+            ],
+         }
+
+         const dramas = data.result
+         const container = document.querySelector('#drama-card')
+
+         dramas.forEach((drama) => {
+            const card = document.createElement('div')
+            card.className = 'card' // 요소의 class 이름을 지정
+
+            // <div class='card'></div>
+
+            // ctrl + ] -> 코드를 오른쪽으로 들여쓰기
+            card.innerHTML = `
+            <header>
+            <h3>${drama.title}</h3>
+                </header>
+                <figure>
+                <img src="${drama.img}" alt="${drama.title}">
+                </figure>
+                <p><strong>년도:${drama.year}</strong></p>
+                <p><strong>장르:${drama.genre}</strong></p>
+                <p><strong>회차:${drama.episodes}</strong></p>
+                <p><strong>출연:${drama.cast}</strong></p>
+                <p><strong>설명:${drama.synopsis}</strong></p>
+            `
+
+            container.appendChild(card)
+         })
+      </script>
+   </body>
+</html>

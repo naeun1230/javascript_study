@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var today = new Date()
+         console.log(today)
+
+         // 0:일, 1:월, 2:화, 3:수, 4:목, 5:금, 6:토
+         // getDay는 숫자로 출력됨 => 요일 출력을 원할 시 switch 작성
+
+         let day = ''
+         switch (today.getDay()) {
+            case 0:
+               day = '일'
+               break
+            case 1:
+               day = '월'
+               break
+            case 2:
+               day = '화'
+               break
+            case 3:
+               day = '수'
+               break
+            case 4:
+               day = '목'
+               break
+            case 5:
+               day = '금'
+               break
+            case 6:
+               day = '토'
+               break
+         }
+
+         document.write(`오늘은 ${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일 ${day}요일`)
+         //getMonth는 -1달로 출력되기 때문에 항상 +1을 해줘야함
+      </script>
+   </body>
+</html>

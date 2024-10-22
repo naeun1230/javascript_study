@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // a부터 b까지 더한 값을 구해주는 함수
+         function sumAll(a, b) {
+            let output = 0
+
+            for (let i = a; i <= b; i++) {
+               output += i
+            }
+
+            return output
+         }
+
+         console.log(`1~100까지의 합: ${sumAll(1, 100)}`)
+         console.log(`1~500까지의 합: ${sumAll(1, 500)}`)
+      </script>
+   </body>
+</html>

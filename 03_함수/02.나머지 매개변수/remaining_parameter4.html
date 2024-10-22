@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 매개변수의 자료형에 따라서 조건을 분기해 결과를 출력
+
+         function test(first, ...rests) {
+            //Array.isArray(값) -> 값이 배열인지 아닌지 판단해주는 함수 -> 배열이면 true, 배열이 아니면 false
+            if (Array.isArray(first)) {
+               //first가 배열이면
+               console.log('first: ', first)
+               console.log('rest: ', rests)
+
+               //first가 숫자형이면
+            } else if (typeof first === 'number') {
+               console.log('first: ', first)
+               console.log('rest: ', rests)
+            }
+         }
+
+         test([52, 273, 32, 103, 275, 24, 57])
+         test(52, 273, 32, 103, 275, 24, 57)
+      </script>
+   </body>
+</html>

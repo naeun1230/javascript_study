@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 객체 = 속성 + 기능(함수)
+         // class -> 자동차 객체의 카탈로그같은 역할 -> 객체에 대한 속성, 기능에 대한 정보만 있음
+         class Car {
+            // 속성
+            // constructor = 생성자
+            constructor(color, seater) {
+               //this.color는 Car 객체의 속성, color는 매개 변수의 color
+               this.color = color
+               this.seater = seater
+            }
+
+            // 기능(함수)
+            run(status) {
+               if (status) {
+                  return '자동차가 달립니다.'
+               }
+            }
+
+            stop(status) {
+               if (status) {
+                  return '자동차가 멈춥니다.'
+               }
+            }
+         }
+
+         const myCar1 = new Car('블랙', 4) // 실제 자동차 객체
+
+         console.log(myCar1.color)
+         console.log(myCar1.seater)
+         console.log(myCar1.run(true))
+         console.log(myCar1.stop(true))
+      </script>
+   </body>
+</html>

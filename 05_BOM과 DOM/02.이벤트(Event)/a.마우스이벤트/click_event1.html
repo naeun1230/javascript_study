@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1>클릭 횟수: 0</h1>
+      <script>
+         let counter = 0
+         const h1 = document.querySelector('h1')
+
+         // 요소에 이벤트를 추가하는 함수
+         h1.addEventListener('click', () => {
+            counter++
+            h1.textContent = `클릭 횟수: ${counter}`
+         })
+      </script>
+   </body>
+</html>

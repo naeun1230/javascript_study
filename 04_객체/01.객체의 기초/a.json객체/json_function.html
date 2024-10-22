@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const iPhone15 = {
+            model: 'iPhone15',
+            manufacturer: 'Apple',
+            releaseYear: 2023,
+            colors: ['Black', 'Blue', 'Pink', 'Yellow', 'Green'],
+         }
+
+         console.log(iPhone15)
+         document.write(iPhone15)
+         document.write('<hr/>')
+
+         // JSON -> 문자열
+         const jsonToString1 = JSON.stringify(iPhone15)
+         document.write(jsonToString1)
+         console.log(jsonToString1)
+
+         // 문자열로 바뀐 json객체를 예쁘게 정렬해서 콘솔에 찍고 싶을 때
+         const jsonToString2 = JSON.stringify(iPhone15, null, 2)
+         console.log(jsonToString2)
+
+         // 문자열 -> JSON
+         const iPhone15_2 = '{ "model": "iPhone15","manufacturer": "Apple","releaseYear": 2023,"colors": ["Black","Blue","Pink","Yellow","Green"]}'
+
+         const stringToJson = JSON.parse(iPhone15_2)
+         document.write(stringToJson)
+         console.log(stringToJson)
+      </script>
+   </body>
+</html>

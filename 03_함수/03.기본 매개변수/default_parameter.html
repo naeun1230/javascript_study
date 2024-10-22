@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function earnings(name, wage = 5890, hours = 40) {
+            console.log(`${name} 님의 급여 정보`)
+            console.log(`- 시급: ${wage.toLocaleString('ko-KR')}원`)
+            console.log(`- 근무시간: ${hours}`)
+            console.log(`- 급여: ${(wage * hours).toLocaleString('ko-KR')}원`)
+         }
+
+         earnings('구름')
+         earnings('별', 10000)
+         earnings('지영', 10000, 52)
+      </script>
+   </body>
+</html>

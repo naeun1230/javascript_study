@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <button onclick="back()">뒤로가기</button>
+      <button onclick="reload()">새로고침</button>
+
+      <script>
+         function back() {
+            history.back() //1번 뒤로가기
+            history.go(-1) //1번 뒤로가기
+            // history.go(-2) //2번 뒤로가기
+            // history.go(1) //1번 앞으로 가기
+            // history.go(2) //2번 앞으로가기
+         }
+
+         function reload() {
+            history.go(0) //새로고침
+            // location.reload() //새로고침
+         }
+      </script>
+   </body>
+</html>

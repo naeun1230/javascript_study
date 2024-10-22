@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      자료형<br />
+      1. 기본 자료형 : 숫자, 문자열 불<br />
+      2. 객체자료형 : 함수, 배열, ...이외 전부(String, Number, JSON, Math)<br />
+      ★ JSON 객체 읽기, 수정하기, 삭제하기
+   </body>
+
+   <script>
+      let dog = {
+         // , 를 기준으로 한 쌍의 데이터로 구성(key:value)
+         // ★key는 중복될 수 없음!!!!
+         name: '흰둥이',
+         owner: '신짱구',
+         age: 1,
+         family: ['신짱구', '신짱아', '봉미선', '신형만'],
+         walk: function () {
+            console.log(this.name + '는 산책 중입니다.')
+         },
+      }
+
+      console.log('-읽기')
+
+      //   console.log(dog.name)
+      console.log(dog['name'])
+
+      //   console.log(dog.owner)
+      console.log(dog['owner'])
+
+      //   console.log(dog.family)
+      console.log(dog.family[1])
+      console.log(dog['family'])
+      console.log(dog['family'][0])
+
+      //   dog.walk()
+      dog['walk']()
+
+      console.log('')
+      console.log('-수정하기')
+
+      dog.name = '검둥이'
+      console.log(dog.name)
+
+      dog['owner'] = '짱구'
+      console.log(dog.owner)
+
+      console.log('')
+      console.log('-추가하기')
+      dog.date = '24/10/22'
+      console.log(dog)
+
+      console.log('')
+      console.log('-삭제하기')
+      delete dog.name
+      delete dog.family[2]
+      console.log(dog)
+   </script>
+</html>

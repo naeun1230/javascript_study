@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         a() //호이스팅
+
+         function a() {
+            document.write('haha')
+         }
+
+         b() //호이스팅 불가능
+
+         const b = function () {
+            document.write('baba')
+         }
+      </script>
+   </body>
+</html>

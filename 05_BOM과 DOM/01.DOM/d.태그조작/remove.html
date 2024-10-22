@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <hr />
+      <h1>제거 대상 문서 객체</h1>
+      <hr />
+      <ul>
+         <li class="list1">리스트1</li>
+         <li class="list2">리스트2</li>
+         <li class="list3">리스트3</li>
+      </ul>
+
+      <script>
+         // 3초 뒤에 코드 실행 (특정 요소 제거)
+         setTimeout(() => {
+            const h1 = document.querySelector('h1')
+            // body의 자식인 h1요소 제거
+            document.body.removeChild(h1)
+
+            const ul = document.querySelector('ul')
+            const list3 = document.querySelector('.list3')
+            ul.removeChild(list3) // ul의 자식인 list3 요소 제거
+
+            const list2 = document.querySelector('.list2')
+            list2.remove() //list2 요소 제거
+         }, 3000)
+      </script>
+   </body>
+</html>

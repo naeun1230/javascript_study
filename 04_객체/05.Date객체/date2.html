@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var date = new Date(1998, 4, 10) //년,월,일 순서대로 지정
+
+         document.write(`내 생일은 ${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일<br>`)
+
+         // 년도, 월 변경
+         date.setFullYear(1999)
+         date.setMonth(8)
+
+         document.write(`내 생일은 ${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일`)
+      </script>
+   </body>
+</html>

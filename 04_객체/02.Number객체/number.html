@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const l = 123.456789
+         // 소수점 이하 자리수 출력 (반올림돼서 출력)
+
+         console.log(l.toFixed(2))
+         console.log(l.toFixed(3))
+
+         const m = Number('abc')
+
+         if (Number.isNaN(m)) {
+            // NaN : Not a Number -> true면 숫자가 아님, false면 숫자임
+            console.log('숫자가 아닙니다.')
+         } else {
+            console.log('숫자입니다.')
+         }
+
+         const n = 10 / 0 //무한대
+         console.log(n)
+
+         if (Number.isFinite(n)) {
+            // is this Finite(유한한 숫자)? -> 유한한 숫자면 true, 그렇지 않으면 false
+            console.log('무한대가 아닙니다.')
+         } else {
+            console.log('무한대 입니다.')
+         }
+      </script>
+   </body>
+</html>

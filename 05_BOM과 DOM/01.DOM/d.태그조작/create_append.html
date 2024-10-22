@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 태그 생성: creatElement(태그이름)
+         const header = document.createElement('h1')
+
+         header.textContent = '문서객체 동적으로 생성하기'
+         header.setAttribute('data-custom', '사용자 정의 속성')
+         header.style.color = 'white'
+         header.style.backgroundColor = 'skyblue'
+
+         // h1태그를 body안에 자식 태그로 추가한다
+         document.body.appendChild(header)
+      </script>
+   </body>
+</html>

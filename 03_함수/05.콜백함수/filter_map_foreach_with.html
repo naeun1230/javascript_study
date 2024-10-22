@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let numbers = [1, 2, 3, 4, 5]
+
+         //배열에서 짝수만 고른 후 제곱한 결과를 출력
+         var result = numbers
+            .filter((value) => value % 2 === 0)
+            .map((value) => value * value)
+            .forEach((value) => console.log(value))
+      </script>
+   </body>
+</html>

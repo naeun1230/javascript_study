@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <ul id="first">
+         <li>첫번째</li>
+      </ul>
+
+      <script>
+         const first = document.querySelector('#first')
+
+         // li 생성
+
+         const li = document.createElement('li')
+         li.textContent = '두번째'
+
+         console.log(li)
+
+         // ul 태그의 자식 태그로 li 추가
+         // appendChild는 형제 태그 뒤에 추가된다
+         first.appendChild(li)
+      </script>
+   </body>
+</html>

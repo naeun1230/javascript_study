@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1 class="title" id="title">HEADERS</h1>
+
+      <script>
+         // querySelector는 하나의 요소만 가지고 온다. 선택자는 CSS와 동일하게 사용
+         //  const header = document.querySelector('#title')
+         //  const header = document.querySelector('.title')
+         //  const header = document.querySelector('h1')
+         const header = document.querySelector('h1.title')
+
+         /*
+         h1 {
+         color: white;
+         background-color: black; //케밥 표기법
+         padding: 10px;
+         }
+         */
+
+         // 카멜표기법으로 CSS속성을 사용해야한다
+         // style은 json 객체이므로 속성값은 문자열 혹은 숫자형 사용
+         header.style.color = 'white'
+         header.style.backgroundColor = 'black' //카멜 표기법
+         header.style.padding = '10px'
+      </script>
+   </body>
+</html>

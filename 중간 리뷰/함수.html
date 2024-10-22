@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 매개변수 a와 b를 받아서 더하는 함수
+         //  function add(a, b) {
+         //     return a + b
+         //  }
+
+         //  const add = function () {
+         //     return a + b
+         //  }
+
+         //  const add = () => a + b
+         //  const test = () => console.log('test')
+         //  const objF = () => ({
+         //     test: 'hi', //JSON객체
+         //  })
+
+         // ★ return문을 만나면 함수는 종료된다!! (함수 ppt7)
+
+         // 매개변수에 기본값을 줄 수 있음(함수 ppt10)
+
+         // 콜백함수의 개념은 꼭 알아두기... (함수 ppt13)
+
+         // 콜백함수란? 매개변수에 함수를 주는 것
+         function printNumber(num, callback) {
+            console.log('printNumber() 함수의 num:', num)
+            callback(num)
+         }
+
+         // 분리
+         const test = (num) => {
+            console.log('num * num: ', num * num)
+         }
+
+         printNumber(5, test)
+
+         // ES5
+         printNumber(5, function (num) {
+            console.log('num * num: ', num * num)
+         })
+
+         //ES6
+         printNumber(5, (num) => {
+            console.log('num * num: ', num * num)
+         })
+      </script>
+   </body>
+</html>

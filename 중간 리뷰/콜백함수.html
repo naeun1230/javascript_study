@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const array1 = ['a', 'b', 'c']
+
+         array1.forEach((value, idx, arr) => {
+            console.log(value, idx, arr)
+         })
+
+         const words = ['옷장', '컴퓨터', '식기세척기', '텔레비전']
+
+         // forEach처럼 반복, 요소,인덱스,배열 가져올 수 있음
+         const result = words.filter((word, idx, arr) => {
+            // return문이 true일 때 word 데이터를 result에 저장 <<핵심
+            return word.length >= 4
+         })
+         console.log(result) //filter는 결과물을 배열형태로 줌
+
+         //.forEach를 붙여서 요소를 배열할 수 있음
+         const result = words
+            .filter((word, idx, arr) => {
+               // return문이 true일 때 word 데이터를 result에 저장 <<핵심
+               return word.length >= 4
+            })
+            .forEach((word) => {
+               console.log(word)
+            })
+
+         const array2 = [1, 4, 9, 16]
+         const result2 = array2.map((value) => value * 2)
+         console.log(result2)
+      </script>
+   </body>
+</html>
