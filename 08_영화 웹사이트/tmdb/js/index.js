@@ -28,7 +28,7 @@ const url = 'https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=
 const getPlayingMovies = async (url) => {
    try {
       const response = await fetch(url, options) // 서버에서 데이터 가져올 때까지 기다린다
-      console.log(response) // 기다렸다가 다 가지고 오면 실행
+      //console.log(response) // 기다렸다가 다 가지고 오면 실행
 
       // ↓await를 지정하는 이유: fetch는 비동기적으로 실행되므로 서버에서 request 해오는 딜레이 시간 중에 실행 된다.
 
@@ -57,7 +57,7 @@ const getPlayingMovies = async (url) => {
                         </a>
                         <div class="card-body">
                            <p class="card-text title">${movie.title}</p>
-                           <p class="card-text average">${movie.vote_average.toFixed(1)}점</p>
+                           <p class="card-text average">${Number(movie.vote_average.toFixed(1)) === 0.0 ? '미반영' : movie.vote_average.toFixed(1)}</p>
                         </div>
                      </div>
                 </div>
@@ -69,7 +69,7 @@ const getPlayingMovies = async (url) => {
       }
       container.innerHTML = rowsHtml
    } catch (error) {
-      console.log('에러 발생:', error)
+      //console.log('에러 발생:', error)
    }
 }
 
