@@ -34,13 +34,61 @@ main .container .row .card {
    flex-direction: row;
 }
 
-main .container .row img {
-   object-fit: cover;
+main .container .row .card-body {
+   line-height: 30px;
 }
 
-main .container .season {
+main .container .row .card-body .title {
+   font-weight: bold;
+   font-size: large;
+}
+
+main .container .row .card-body .overview,
+main .container .row .overview,
+main .container .season p {
+   width: 100%;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+}
+
+main .container .row .col-sm-3 {
+   text-align: center;
+}
+
+/* main .container .season {
    width: 100%;
    text-align: center;
+   margin: 0 auto;
+   margin-top: 20px;
+} */
+
+main .container .season {
+   text-align: center;
+}
+
+main .container .season .card-seasons {
+   height: 100%;
+}
+
+main .container .season .card-img {
+   width: 100%;
+}
+
+main .container .season .posterImg {
+   width: 100%;
+   height: 288px;
+   background-image: url('../images/white.PNG');
+   background-repeat: no-repeat;
+   background-position: center;
+   border-radius: 10px;
+}
+
+main .container .season p {
+   line-height: 30px;
+   cursor: pointer;
 }
 
 /* footer */
@@ -49,4 +97,18 @@ footer {
    height: 100px;
    line-height: 100px;
    background-color: #f2f2f2;
+}
+
+/* 반응형 UI 문제 해결 */
+
+@media (min-width: 576px) and (max-width: 767px) {
+   .col-sm-6 {
+      width: 100%;
+   }
+}
+
+@media (max-width: 575px) {
+   .col-sm-3 {
+      text-align: center;
+   }
 }

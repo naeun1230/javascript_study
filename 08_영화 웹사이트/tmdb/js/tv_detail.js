@@ -31,17 +31,19 @@ const getDetailTv = async (tvDetailUrl) => {
                     <div class="col-sm-9">
                        <h2>${data.name}(${month.getFullYear()})</h2>
                        <ul class="tv-info">
-                          <li>원제 ${data.original_name}, ${data.original_language}</li>
+                          <li>원제 ${data.original_name}, ${data.original_language.toUpperCase()}</li>
                           <li>평점 ${data.vote_average.toFixed(1)}</li>
                           <li>최근방영일 ${data.last_air_date}</li>
                           <li>처음방영일 ${data.first_air_date}</li>
                        </ul>
                        <div>
+                       <br />
                        <p>줄거리</p>
-                       <p>${data.overview}</p>
+                       <p class="overview">${data.overview == '' ? '줄거리 없음' : data.overview}</p>
                        </div>
-                    </div>
-                 </div>`
+                       </div>
+                       </div>
+                       <hr />`
 
       mainContainer.innerHTML += rowHtml
 
@@ -50,8 +52,17 @@ const getDetailTv = async (tvDetailUrl) => {
       let seasons = data.seasons
 
       seasons.forEach((season) => {
+         let posterImg = !season.poster_path ? './images/logo.svg' : `https://image.tmdb.org/t/p/w200${season.poster_path}`
+
          seasonsRowHtml += `
-        <p>${season.name} (평점 ${data.vote_average.toFixed(1)}) 보러가기 - ${season.air_date} 방영</p>
+         <div class="col-sm-2 p-3 card-seasons">
+            <div clas="card-img">
+               <img src="${posterImg}" alt="poster" class="poster-detail posterImg"/>
+            </div>
+            <div class="card-body">
+        <p>${season.name} (평점 ${season.vote_average === 0 ? '이 없습니다' : season.vote_average.toFixed(1)}) <br /> 보러가기 - ${!season.air_date ? '미' : season.air_date} 방영</p>
+        </div>
+        </div>
     `
       })
 
