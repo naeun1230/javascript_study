@@ -43,9 +43,23 @@ const getDetailTv = async (tvDetailUrl) => {
                        </div>
                        </div>
                        </div>
-                       <hr />`
+                       <br />`
 
       mainContainer.innerHTML += rowHtml
+
+      let tvInfo = `<ul class="nav nav-tabs">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: #0d6efd;">시리즈</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="recommend">추천</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">상세정보</a>
+                     </li>
+                  </ul>`
+
+      mainContainer.innerHTML += tvInfo
 
       let seasonsRowHtml = `<div class="row season">`
 
@@ -66,7 +80,6 @@ const getDetailTv = async (tvDetailUrl) => {
     `
       })
 
-      seasonsRowHtml += `</div>`
       mainContainer.innerHTML += seasonsRowHtml
    } catch (error) {
       console.log('에러 발생: ', error)
@@ -74,3 +87,18 @@ const getDetailTv = async (tvDetailUrl) => {
 }
 
 getDetailTv(tvDetailUrl)
+
+const tvRecommendUrl = `https://api.themoviedb.org/3/tv/${tvID}/recommendations?language=ko-KR&page=1`
+
+const getRecommendTv = async (tvRecommendUrl) => {
+   try {
+      const response = await fetch(tvRecommendUrl, options)
+      const data = await response.json()
+
+      console.log(data)
+   } catch (error) {
+      console.log('error:', error)
+   }
+}
+
+getRecommendTv(tvRecommendUrl)

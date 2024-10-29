@@ -6,7 +6,7 @@ const options = {
    },
 }
 
-const url = 'https://api.themoviedb.org/3/tv/popular?language=ko-KR&page=1'
+const url = 'https://api.themoviedb.org/3/tv/top_rated?language=ko-KR&page=1'
 
 const getPlayingTV = async (url) => {
    try {

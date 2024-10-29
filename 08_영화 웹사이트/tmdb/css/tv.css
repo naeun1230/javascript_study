@@ -91,6 +91,10 @@ main .container .season p {
    cursor: pointer;
 }
 
+main .container .nav-item a:hover {
+   color: black;
+}
+
 /* footer */
 
 footer {
